@@ -37,4 +37,29 @@ ext {
     powerMockVersion = '1.7.4'                  //http://bit.ly/2NVQXh0
     assertJVersion = '3.11.1'                   //http://bit.ly/2mXO1EX
 
+    //bintray
+
+    //For bintray and jcenter distribution
+    bintrayRepo = 'maven'
+    bintrayName = 'KotlinWss'
+
+    publishedGroupId = 'r3tam.ru'
+    libraryName = 'WssKotlin'
+    artifact = 'wsskotlin' //This artifact name should be the same with library module name
+
+    libraryDescription = 'Kotlin-wrapper under WebSocketListener'
+
+    siteUrl = 'https://github.com/artem-zaitsev/wsskotlin'
+    gitUrl = 'https://github.com/artem-zaitsev/wsskotlin'
+
+    libraryVersion = '0.0.1'
+
+    developerId = 'r3tam'
+    developerName = 'Artem Zaitsev'
+    developerEmail = 'zaitsev_art@inbox.ru'
+    organization = ''
+    licenseName = 'The Apache Software License, Version 2.0'  //Example for license
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+
 }

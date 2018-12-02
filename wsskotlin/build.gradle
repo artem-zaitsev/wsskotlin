@@ -44,6 +44,28 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.1.0-alpha3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha3'
 }
+
+
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        // Two necessary plugins
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.4'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
+    }
+}
 repositories {
     mavenCentral()
 }
+
+tasks.withType(Javadoc) {
+    options.addBooleanOption('Xdoclint:none', true)
+    excludes = ['**/*.kt']
+}
+
+//for test, later make self
+apply from: 'https://raw.githubusercontent.com/quangctkm9207/template-files/master/android/gradle/install.gradle'
+apply from: 'https://raw.githubusercontent.com/quangctkm9207/template-files/master/android/gradle/bintray.gradle'
