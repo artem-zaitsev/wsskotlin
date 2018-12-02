@@ -1,0 +1,49 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply from: 'config.gradle'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion 17
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            java.srcDirs += 'src/main/kotlin/'
+            test.java.srcDirs += 'src/test/kotlin'
+            androidTest.java.srcDirs += 'src/androidTest/kotlin'
+        }
+    }
+}
+
+dependencies {
+    implementation "io.reactivex.rxjava2:rxjava:$rxJava2Version"
+    implementation "com.squareup.okhttp3:okhttp:$okHttpVersion"
+    implementation "org.jetbrains:annotations:$jetbrainsAnnotationsVersion"
+    implementation "com.google.code.gson:gson:$gsonVersion"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.0-alpha3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha3'
+}
+repositories {
+    mavenCentral()
+}
